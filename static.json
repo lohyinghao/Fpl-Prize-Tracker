@@ -1,14 +1,4 @@
 {
-    "root": "/",
-    "https_only": true,
-    "routes": {
-      "/**": "index.html"
-    },
-
-    "headers": {
-        "/**": {
-            "Access-Control-Allow-Origin": "*"
-        }
-    }
-
-  }
+  "root": "*",
+  "clean_urls": true
+}
