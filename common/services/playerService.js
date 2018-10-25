@@ -14,8 +14,8 @@
         };
 
         function getPlayersGWUrl(playersId) {
-            //let corsUrl = "https://cors.io?";
-            let corsUrl = "";
+            let corsUrl = "https://cors.io?";
+            //let corsUrl = "";
             let base_link = "https://fantasy.premierleague.com/drf/entry/";
             let end_link = "/event/:gameweek/picks";
             
@@ -24,8 +24,8 @@
         };
 
         function getPlayerUrl(playerId){
-            //let corsUrl = "https://cors.io?";
-            let corsUrl = "";
+            let corsUrl = "https://cors.io?";
+            //let corsUrl = "";
             let base_link = "https://fantasy.premierleague.com/drf/entry/";
             let result = corsUrl.concat(base_link,playerId);
             return result;
