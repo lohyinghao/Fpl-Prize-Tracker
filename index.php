@@ -1,1 +1,1 @@
-<?php header( 'Location: /index.html Access-Control-Allow-Origin: *' ) ; ?>
+<?php header( 'Location: /index.html' ) ;  ?>
