@@ -9,26 +9,23 @@
     function playerService() {
 
         function getPlayersId() { 
-            var playersList = ['871084','885009','858535','1356220'];
+            var playersList = ['234005','1282707','2283332','52203'];
             return playersList;
         };
 
-        function getPlayersGWUrl(playersId) {
-            let corsUrl = "https://cors.io?";
-            //let corsUrl = "";
-            let base_link = "https://fantasy.premierleague.com/drf/entry/";
-            let end_link = "/event/:gameweek/picks";
-            
-            return corsUrl.concat(base_link,playersId,end_link);
+        function getPlayersGWUrl(playerId) {
+            let corsUrl = "https://api.allorigins.win/get?url=";
+            let combined_link = encodeURIComponent(`https://fantasy.premierleague.com/api/entry/${playerId}/history/`)
+
+            return corsUrl.concat(combined_link);
 
         };
 
         function getPlayerUrl(playerId){
-            let corsUrl = "https://cors.io?";
-            //let corsUrl = "";
-            let base_link = "https://fantasy.premierleague.com/drf/entry/";
-            let result = corsUrl.concat(base_link,playerId);
-            return result;
+            let corsUrl = "https://api.allorigins.win/get?url=";
+            let combined_link = encodeURIComponent(`https://fantasy.premierleague.com/api/entry/${playerId}/`)
+
+            return corsUrl.concat(combined_link);
         }
 
 
