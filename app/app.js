@@ -1,31 +1,25 @@
-(function () {
-    'use strict';
+(function() {
+  'use strict';
 
-    angular.module('FPL', [
-        // Angular modules
-        "ui.router",
-        // Custom modules
-        "common.services"
-        // 3rd Party Modules
+  angular.module('FPL', [
+    // Angular modules
+    'ui.router',
+    // Custom modules
+    'common.services'
+    // 3rd Party Modules
+  ]);
 
-    ]);
+  angular.module('FPL').config(configConfig);
 
-    angular
-        .module('FPL')
-        .config(configConfig)
+  configConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    configConfig.$inject = ["$stateProvider",
-                            "$urlRouterProvider"];
+  function configConfig($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
 
-    function configConfig($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/");
-
-        $stateProvider
-            .state("home",{
-                url: "/",
-                templateUrl: "app/table/table.html",
-                controller: "TableController as vm"
-            })
-    }
-
-}());
+    $stateProvider.state('home', {
+      url: '/',
+      templateUrl: 'app/table/table.html',
+      controller: 'TableController as vm'
+    });
+  }
+})();

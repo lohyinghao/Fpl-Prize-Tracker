@@ -21,6 +21,7 @@
       await getMoney();
       vm.loading = false;
       $scope.$apply();
+      console.log(vm);
     }
 
     // Function to get teamnames
@@ -30,7 +31,7 @@
         let singleP = dataService
           .callPlayerUrl(vm.playersList[i])
           .get(function(data) {
-            const playerData = JSON.parse(data.contents);
+            const playerData = data;
             vm.teamnames[vm.playersList[i]] = playerData.name;
             vm.money['Total'][playerData.name] = 0;
           }).$promise;
@@ -46,7 +47,7 @@
         let singleP = dataService
           .callGWUrl(vm.playersList[i])
           .get(function(data) {
-            const playerData = JSON.parse(data.contents);
+            const playerData = data;
             vm.gwPts[vm.playersList[i]] = [];
             playerData.current.forEach(res => {
               vm.gwPts[vm.playersList[i]].push(
