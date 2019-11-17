@@ -5,6 +5,7 @@ var app = express();
 
 const port = process.env.PORT || 3000;
 
+// Uncomment to allow CORS on this proxy. Not recommended as server might get flooded
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', process.env.ORIGIN || '*');
 //   next();

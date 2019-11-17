@@ -11,16 +11,12 @@
     }
 
     function getPlayersGWUrl(playerId) {
-      //let corsUrl = "https://api.allorigins.win/get?url=";
-      //let corsUrl = 'https://cors-anywhere.herokuapp.com/';
       let corsUrl = '/api/';
       let combined_link = `https://fantasy.premierleague.com/api/entry/${playerId}/history/`;
       return corsUrl.concat(combined_link);
     }
 
     function getPlayerUrl(playerId) {
-      //let corsUrl = "https://api.allorigins.win/get?url=";
-      //let corsUrl = 'https://cors-anywhere.herokuapp.com/';
       let corsUrl = '/api/';
       let combined_link = `https://fantasy.premierleague.com/api/entry/${playerId}/`;
       return corsUrl.concat(combined_link);
