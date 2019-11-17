@@ -1,0 +1,26 @@
+{
+  "name": "fpl_cors",
+  "version": "1.0.0",
+  "description": "![Prize Pool Tracker](prizePoolTracker.png)",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lohyinghao/Fpl-Prize-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lohyinghao/Fpl-Prize-Tracker/issues"
+  },
+  "homepage": "https://github.com/lohyinghao/Fpl-Prize-Tracker#readme"
+}
