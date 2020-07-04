@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular.module('FPL').controller('TableController', TableController);
@@ -30,7 +30,7 @@
       for (let i = 0; i < vm.playersList.length; i++) {
         let singleP = dataService
           .callPlayerUrl(vm.playersList[i])
-          .get(function(data) {
+          .get(function (data) {
             const playerData = data;
             vm.teamnames[vm.playersList[i]] = playerData.name;
             vm.money['Total'][playerData.name] = 0;
@@ -46,10 +46,10 @@
       for (let i = 0; i < vm.playersList.length; i++) {
         let singleP = dataService
           .callGWUrl(vm.playersList[i])
-          .get(function(data) {
+          .get(function (data) {
             const playerData = data;
             vm.gwPts[vm.playersList[i]] = [];
-            playerData.current.forEach(res => {
+            playerData.current.forEach((res) => {
               vm.gwPts[vm.playersList[i]].push(
                 res.points - res.event_transfers_cost
               );
@@ -81,10 +81,10 @@
     }
 
     function calculateContribution(arr) {
-      let sorted = arr.slice().sort(function(a, b) {
+      let sorted = arr.slice().sort(function (a, b) {
         return b - a;
       });
-      let ranks = arr.slice().map(function(v) {
+      let ranks = arr.slice().map(function (v) {
         return sorted.indexOf(v) + 1;
       });
       return paymentcalculator(ranks);
@@ -111,7 +111,11 @@
       }
       if (unique.length == 1) {
         for (let i = 0; i < arr.length; i++) {
-          output[i] = 4;
+          //in this particular season due to covid,
+          // 4 ways tied are all results of cancelled gw
+          // hencing zeroing them out here.
+          // output[i] = 4;
+          output[i] = 0;
         }
       }
       if (unique.length == 2) {
@@ -209,7 +213,7 @@
     function countDuplicates(original) {
       let counts = {},
         duplicate = 0;
-      original.forEach(function(x) {
+      original.forEach(function (x) {
         counts[x] = (counts[x] || 0) + 1;
       });
       for (var key in counts) {
@@ -224,7 +228,7 @@
       let object = {};
       let result = [];
 
-      arr.forEach(function(item) {
+      arr.forEach(function (item) {
         if (!object[item]) object[item] = 0;
         object[item] += 1;
       });
