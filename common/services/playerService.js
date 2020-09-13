@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular.module('common.services').factory('playerService', playerService);
@@ -6,7 +6,7 @@
   playerService.$inject = [];
   function playerService() {
     function getPlayersId() {
-      var playersList = ['234005', '1282707', '2283332', '52203'];
+      var playersList = ['1737057', '385668', '381635', '384937'];
       return playersList;
     }
 
@@ -25,7 +25,7 @@
     return {
       getPlayersId: getPlayersId,
       getPlayersGWUrl: getPlayersGWUrl,
-      getPlayerUrl: getPlayerUrl
+      getPlayerUrl: getPlayerUrl,
     };
   }
 })();
